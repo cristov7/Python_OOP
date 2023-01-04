@@ -30,6 +30,6 @@ Online judge system - https://judge.softuni.org/
 
 
 # Additional resources
-- Python Advanced
+- Python OOP
 
 https://softuni.bg/trainings/3964/python-oop-february-2023
