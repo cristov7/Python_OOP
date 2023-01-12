@@ -1,6 +1,6 @@
 # SoftUni - Python OOP - February 2023
 
-In this repository there are solutions to tasks from the course with Python OOP of the software academy of SoftUni University.
+In this repository there are solutions to tasks from the Object-Oriented Programming (OOP) course with Python of the software academy of SoftUni University.
 
 https://softuni.bg/trainings/3964/python-oop-february-2023
 
