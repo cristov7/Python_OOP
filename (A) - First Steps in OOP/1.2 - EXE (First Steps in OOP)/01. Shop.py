@@ -1,5 +1,8 @@
+from typing import List
+
+
 class Shop:
-    def __init__(self, name: str, items: list):
+    def __init__(self, name: str, items: List[str]):
         self.name = name
         self.items = items
 
