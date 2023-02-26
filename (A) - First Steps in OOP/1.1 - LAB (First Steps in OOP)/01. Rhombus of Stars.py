@@ -14,7 +14,7 @@ def rhombus_of_stars_function():
         print("*")
 
 
-rhombus_of_stars_function()
+rhombus_of_stars_function(
 
 
 # def print_row(current_size, current_star_count):
