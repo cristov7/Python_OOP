@@ -17,7 +17,7 @@ class Section:
     def complete_task(self, task_name: str) -> str:
         try:
             task_info = [task for task in self.tasks if task.name == task_name][0]
-            task_info.completed = Task
+            task_info.completed = True
             return f"Completed task {task_name}"
         except IndexError:
             return f"Could not find task with the name {task_name}"
