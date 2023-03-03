@@ -1,32 +1,38 @@
-from project.player import Player
 from typing import List
+from project.player import Player
 
 
 class Guild:
     def __init__(self, name: str):
         self.name = name
-        self.players: List[Player] = []   # [players of the guild]
+        self.players: List[Player] = []   # [player objects]
 
-    def assign_player(self, player: Player) -> str:
+    def assign_player(self, player: Player) -> str:   # player == player_object
+        player_name = player.name
         if player in self.players:
-            return f"Player {player.name} is already in the guild."
-        elif player.guild != Player.NOT_IN_OTHER_GUILD_WORD:
-            return f"Player {player.name} is in another guild."
+            return f"Player {player_name} is already in the guild."
+        elif player.guild != "Unaffiliated":
+            return f"Player {player_name} is in another guild."
         else:
             self.players.append(player)
+            guild_name = self.name
             player.guild = self.name
-            return f"Welcome player {player.name} to the guild {self.name}"
+            return f"Welcome player {player_name} to the guild {guild_name}"
 
-    def kick_player(self, player_name: str) -> str:
-        try:
-            player = [player_info for player_info in self.players if player_info.name == player_name][0]
-        except IndexError:
+    def kick_player(self, player_name: str):
+        players_objects_list = [player_object for player_object in self.players
+                                if player_object.name == player_name]
+        if players_objects_list:
+            player_object = players_objects_list[0]
+            self.players.remove(player_object)
+            player_object.guild = "Unaffiliated"
+            return f"Player {player_name} has been removed from the guild."
+        else:
             return f"Player {player_name} is not in the guild."
-        self.players.remove(player)
-        player.guild = Player.NOT_IN_OTHER_GUILD_WORD
-        return f"Player {player_name} has been removed from the guild."
 
-    def guild_info(self) -> str:
-        players_info = "\n".join(player_info.player_info() for player_info in self.players)
-        return f"Guild: {self.name}" \
+    def guild_info(self):
+        guild_name = self.name
+        players_info = "\n".join([player_object.player_info()
+                                  for player_object in self.players])
+        return f"Guild: {guild_name}" \
                f"\n{players_info}"
