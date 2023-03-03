@@ -5,7 +5,7 @@ from project.task import Task
 class Section:
     def __init__(self, name: str):
         self.name = name
-        self.tasks: List[Task] = []   # [task objects]
+        self.tasks: List[Task] = []   # [task_objects]
 
     def add_task(self, new_task: Task) -> str:   # new_task == task_object
         if new_task in self.tasks:
