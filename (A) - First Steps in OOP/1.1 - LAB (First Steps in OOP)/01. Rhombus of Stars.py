@@ -17,6 +17,22 @@ def rhombus_of_stars_function():
 rhombus_of_stars_function()
 
 
+# size = int(input())
+# free_space_char = " "
+# star_char = "* "
+# if size == 1:
+#     print(star_char)
+# else:
+#     for line in range(1, size + 1):
+#         count_free_spaces = size - line
+#         count_stars = size - count_free_spaces
+#         print(count_free_spaces * free_space_char + count_stars * star_char)
+#     for line in range(size - 1, 0, - 1):
+#         count_free_spaces = size - line
+#         count_stars = size - count_free_spaces
+#         print(count_free_spaces * free_space_char + count_stars * star_char)
+
+
 # def print_row(current_size, current_star_count):
 #     for row in range(current_size - star_count):
 #         print(" ", end="")
