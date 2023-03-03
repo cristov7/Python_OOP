@@ -22,7 +22,7 @@ rhombus_of_stars_function()
 # star_char = "* "
 # if size == 1:
 #     print(star_char)
-# else:
+# elif size > 0:
 #     for line in range(1, size + 1):
 #         count_free_spaces = size - line
 #         count_stars = size - count_free_spaces
