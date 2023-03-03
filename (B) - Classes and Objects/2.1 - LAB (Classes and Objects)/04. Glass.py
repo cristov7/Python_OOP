@@ -8,7 +8,7 @@ class Glass:
         if self.content + ml <= Glass.capacity:   # Glass.capacity == self.capacity
             self.content += ml
             return f"Glass filled with {ml} ml"
-        else:
+        else:   # elif self.content + ml > Glass.capacity:   # Glass.capacity == self.capacity
             return f"Cannot add {ml} ml"
 
     def empty(self) -> str:
