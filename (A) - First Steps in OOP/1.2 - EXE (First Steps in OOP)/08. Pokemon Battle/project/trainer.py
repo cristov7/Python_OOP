@@ -8,34 +8,27 @@ class Trainer:
         self.pokemons: List[Pokemon] = []
 
     def add_pokemon(self, pokemon: Pokemon) -> str:
-        if pokemon not in self.pokemons:
-            self.pokemons.append(pokemon)
-            return f"Caught {pokemon.pokemon_details()}"
-        else:
+        if pokemon in self.pokemons:
             return "This pokemon is already caught"
+        else:
+            self.pokemons.append(pokemon)
+            pokemon_name = pokemon.name
+            pokemon_health = pokemon.health
+            return f"Caught {pokemon_name} with health {pokemon_health}"
 
     def release_pokemon(self, pokemon_name: str) -> str:
-        try:
-            pokemon = [x for x in self.pokemons if x.name == pokemon_name][0]
-            # pokemon = next(filter(lambda x: x.name == pokemon_name, self.pokemons))
+        pokemon_names_list = [pokemon for pokemon in self.pokemons if pokemon.name == pokemon_name]
+        if pokemon_names_list:
+            pokemon = pokemon_names_list[0]
             self.pokemons.remove(pokemon)
             return f"You have released {pokemon_name}"
-        except IndexError:
-        # except StopIteration:
+        else:
             return "Pokemon is not caught"
-        # try:
-        #     pokemon = next(filter(lambda x: x.name == pokemon_name, self.pokemons))
-        #     self.pokemons.remove(pokemon)
-        #     return f"You have released {pokemon_name}"
-        # except StopIteration:
-        #     return "Pokemon is not caught"
 
     def trainer_data(self) -> str:
-        output_list = [f"Pokemon Trainer {self.name}", f"Pokemon count {len(self.pokemons)}"]
-        convert_pokemons_list = [f"- {pokemon.pokemon_details()}" for pokemon in self.pokemons]
-        output_list.extend(convert_pokemons_list)
-        return "\n".join(output_list)
-        # pokemons_data = "\n".join(f"- {pokemon.pokemon_details()}" for pokemon in self.pokemons)
-        # return f"Pokemon Trainer {self.name}" \
-        #        f"\nPokemon count {len(self.pokemons)}" \
-        #        f"\n{pokemons_data}"
+        trainer_name = self.name
+        amount_of_pokemon_caught = len(self.pokemons)
+        pokemon_details = "\n".join([f"- {pokemon.pokemon_details()}" for pokemon in self.pokemons])
+        return f"Pokemon Trainer {trainer_name}" \
+               f"\nPokemon count {amount_of_pokemon_caught}" \
+               f"\n{pokemon_details}"
