@@ -11,14 +11,14 @@ class SteamUser:
         if game in self.games:
             self.played_hours += hours
             return f"{self.username} is playing {game}"
-        else:
+        else:   # elif game not in self.games:
             return f"{game} is not in library"
 
     def buy_game(self, game: str) -> str:
         if game not in self.games:
             self.games.append(game)
             return f"{self.username} bought {game}"
-        else:
+        else:   # if game in self.games:
             return f"{game} is already in your library"
 
     def status(self) -> str:
@@ -33,3 +33,4 @@ class SteamUser:
 # print(user.buy_game("Oxygen Not Included"))
 # print(user.play("Oxygen Not Included", 6))
 # print(user.status())
+
