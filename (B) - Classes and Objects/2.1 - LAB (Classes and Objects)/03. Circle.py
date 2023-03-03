@@ -1,5 +1,5 @@
 class Circle:
-    pi = 3.14
+    pi: float = 3.14
 
     def __init__(self, radius: int):
         self.radius = radius
@@ -7,11 +7,13 @@ class Circle:
     def set_radius(self, new_radius: int) -> None:
         self.radius = new_radius
 
-    def get_area(self) -> [int, float]:
-        return Circle.pi * self.radius ** 2   # Circle.pi == self.pi
+    def get_area(self) -> [float, int]:
+        area = Circle.pi * self.radius ** 2   # Circle.pi == self.pi
+        return area
 
-    def get_circumference(self) -> [int, float]:
-        return 2 * Circle.pi * self.radius   # Circle.pi == self.pi
+    def get_circumference(self) -> [float, int]:
+        circumference = 2 * Circle.pi * self.radius   # Circle.pi == self.pi
+        return circumference
 
 
 # circle = Circle(10)
