@@ -2,7 +2,7 @@ from typing import List
 
 
 class Vet:
-    animals: List[str] = []
+    animals: List[str] = []   # total amount of animals for all vets
     space: int = 5
 
     def __init__(self, name: str):
