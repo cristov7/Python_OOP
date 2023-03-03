@@ -8,8 +8,11 @@ class User:
         self.books: List[str] = []   # [list of rented books]
 
     def info(self) -> str:
-        rented_books = ", ".join(sorted(self.books))
-        return rented_books
+        sorted_rented_books = ", ".join(sorted(self.books))
+        return sorted_rented_books
 
     def __str__(self) -> str:
-        return f"{self.user_id}, {self.username}, {self.books}"
+        user_id = self.user_id
+        username = self.username
+        list_of_rented_books = self.books
+        return f"{user_id}, {username}, {list_of_rented_books}"
