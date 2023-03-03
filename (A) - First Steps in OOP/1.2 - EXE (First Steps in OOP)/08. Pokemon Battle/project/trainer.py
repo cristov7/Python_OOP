@@ -5,7 +5,7 @@ from project.pokemon import Pokemon
 class Trainer:
     def __init__(self, name: str):
         self.name = name
-        self.pokemons: List[Pokemon] = []   # [pokemon objects]
+        self.pokemons: List[Pokemon] = []   # [pokemon_objects]
 
     def add_pokemon(self, pokemon: Pokemon) -> str:   # pokemon == pokemon_object
         if pokemon in self.pokemons:
