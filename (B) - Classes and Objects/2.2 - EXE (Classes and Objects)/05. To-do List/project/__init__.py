@@ -1,5 +1,5 @@
-from project.section import Section
 from project.task import Task
+from project.section import Section
 
 
 task = Task("Make bed", "27/05/2020")
