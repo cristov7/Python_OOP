@@ -14,7 +14,7 @@ class Vet:
             self.animals.append(animal_name)
             Vet.animals.append(animal_name)
             return f"{animal_name} registered in the clinic"
-        else:
+        else:   # elif len(self.animals) >= Vet.space:
             return "Not enough space"
 
     def unregister_animal(self, animal_name: str) -> str:
@@ -22,7 +22,7 @@ class Vet:
             self.animals.remove(animal_name)
             Vet.animals.remove(animal_name)
             return f"{animal_name} unregistered successfully"
-        else:
+        else:   # elif animal_name not in self.animals:
             return f"{animal_name} not in the clinic"
 
     def info(self) -> str:
