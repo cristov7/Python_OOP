@@ -56,3 +56,43 @@ class Time:
     #             self.hours += 1
     #             if self.hours > Time.max_hours:
     #                 self.hours = 0
+
+
+# class Time:
+#     max_hours: int = 23
+#     max_minutes: int = 59
+#     max_seconds: int = 59
+# 
+#     def __init__(self, hours: int, minutes: int, seconds: int):
+#         self.hours = hours
+#         self.minutes = minutes
+#         self.seconds = seconds
+# 
+#     def set_time(self, hours: int, minutes: int, seconds: int) -> None:
+#         self.hours = hours
+#         self.minutes = minutes
+#         self.seconds = seconds
+# 
+#     def get_time(self) -> str:
+#         hh = self.hours
+#         mm = self.minutes
+#         ss = self.seconds
+#         return f"{hh:02}:{mm:02}:{ss:02}"
+# 
+#     def next_second(self) -> str:
+#         self.seconds += 1
+#         if self.seconds <= Time.max_seconds:
+#             return self.get_time()
+#         else:
+#             self.seconds = 0
+#             self.minutes += 1
+#             if self.minutes <= Time.max_minutes:
+#                 return self.get_time()
+#             else:
+#                 self.minutes = 0
+#                 self.hours += 1
+#                 if self.hours <= Time.max_hours:
+#                     return self.get_time()
+#                 else:
+#                     self.hours = 0
+#                     return self.get_time()
