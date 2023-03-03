@@ -8,7 +8,7 @@ class Album:
         self.songs: List[Song] = list(*songs)   # [song_objects]
         self.published: bool = False
 
-    def add_song(self, song: Song) -> str:
+    def add_song(self, song: Song) -> str:   # song == song_object
         if song.single:   # if song.single == True:
             song_name = song.name
             return f"Cannot add {song_name}. It's a single"

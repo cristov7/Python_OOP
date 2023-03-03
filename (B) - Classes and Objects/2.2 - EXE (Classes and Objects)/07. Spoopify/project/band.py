@@ -7,7 +7,7 @@ class Band:
         self.name = name
         self.albums: List[Album] = []   # [album_objects]
 
-    def add_album(self, album: Album) -> str:
+    def add_album(self, album: Album) -> str:   # album == album_object
         band_name = self.name
         album_name = album.name
         if album in self.albums:
