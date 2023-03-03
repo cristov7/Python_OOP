@@ -13,7 +13,7 @@ class PizzaDelivery:
             self.price += quantity * price_per_quantity
             if ingredient in self.ingredients.keys():
                 self.ingredients[ingredient] += quantity
-            else:
+            else:   # elif ingredient not in self.ingredients.keys():
                 self.ingredients[ingredient] = quantity
         else:   # elif self.ordered == True:
             pizza_name = self.name
@@ -24,11 +24,11 @@ class PizzaDelivery:
             if ingredient not in self.ingredients.keys():
                 pizza_name = self.name
                 return f"Wrong ingredient selected! We do not use {ingredient} in {pizza_name}!"
-            else:
+            else:   # elif ingredient in self.ingredients.keys():
                 quantity_in_pizza = self.ingredients[ingredient]
                 if quantity > quantity_in_pizza:
                     return f"Please check again the desired quantity of {ingredient}!"
-                else:
+                else:   # elif quantity <= quantity_in_pizza:
                     self.ingredients[ingredient] -= quantity
                     self.price -= quantity * price_per_quantity
         else:   # elif self.ordered == True:
