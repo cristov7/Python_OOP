@@ -5,7 +5,7 @@ from project.player import Player
 class Guild:
     def __init__(self, name: str):
         self.name = name
-        self.players: List[Player] = []   # [player objects]
+        self.players: List[Player] = []   # [player_objects]
 
     def assign_player(self, player: Player) -> str:   # player == player_object
         player_name = player.name
