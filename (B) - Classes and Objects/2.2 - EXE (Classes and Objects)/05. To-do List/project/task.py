@@ -11,14 +11,14 @@ class Task:
     def change_name(self, new_name: str) -> str:
         if self.name == new_name:
             return "Name cannot be the same."
-        else:
+        else:   # elif self.name != new_name:
             self.name = new_name
             return new_name
 
     def change_due_date(self, new_date: str) -> str:
         if self.due_date == new_date:
             return "Date cannot be the same."
-        else:
+        else:   # elif self.due_date != new_date:
             self.due_date = new_date
             return new_date
 
@@ -30,7 +30,7 @@ class Task:
             self.comments[comment_number] = new_comment
             all_comments = ", ".join(self.comments)
             return all_comments
-        else:
+        else:   # elif comment_number < 0 or len(self.comments) <= comment_number:
             return "Cannot find comment."
 
     def details(self) -> str:

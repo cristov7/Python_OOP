@@ -11,7 +11,7 @@ class Section:
         if new_task in self.tasks:
             section_name = self.name
             return f"Task is already in the section {section_name}"
-        else:
+        else:   # elif new_task not in self.tasks:
             self.tasks.append(new_task)
             task_details = new_task.details()
             return f"Task {task_details} is added to the section"
@@ -19,11 +19,11 @@ class Section:
     def complete_task(self, task_name: str) -> str:
         task_objects_list = [task_object for task_object in self.tasks
                              if task_object.name == task_name]
-        if task_objects_list:
+        if task_objects_list:   # if len(task_objects_list) > 0:
             task_object = task_objects_list[0]
             task_object.completed = True
             return f"Completed task {task_name}"
-        else:
+        else:   # elif len(task_objects_list) == 0:
             return f"Could not find task with the name {task_name}"
 
     def clean_section(self) -> str:
