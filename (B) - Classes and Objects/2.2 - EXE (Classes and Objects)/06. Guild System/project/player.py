@@ -12,7 +12,7 @@ class Player:
     def add_skill(self, skill_name: str, mana_cost: int) -> str:
         if skill_name in self.skills.keys():
             return "Skill already added"
-        else:
+        else:   # elif skill_name not in self.skills.keys():
             self.skills[skill_name] = mana_cost
             player_name = self.name
             return f"Skill {skill_name} added to the collection of the player {player_name}"

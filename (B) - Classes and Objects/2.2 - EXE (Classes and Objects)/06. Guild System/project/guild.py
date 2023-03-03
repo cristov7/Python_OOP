@@ -1,5 +1,5 @@
 from typing import List
-from player import Player
+from project.player import Player
 
 
 class Guild:
@@ -13,7 +13,7 @@ class Guild:
             return f"Player {player_name} is already in the guild."
         elif player.guild != "Unaffiliated":
             return f"Player {player_name} is in another guild."
-        else:
+        else:   # elif player not in self.players and player.guild == "Unaffiliated":
             self.players.append(player)
             guild_name = self.name
             player.guild = self.name
@@ -22,12 +22,12 @@ class Guild:
     def kick_player(self, player_name: str) -> str:
         players_objects_list = [player_object for player_object in self.players
                                 if player_object.name == player_name]
-        if players_objects_list:
+        if players_objects_list:   # if len(players_objects_list) > 0:
             player_object = players_objects_list[0]
             self.players.remove(player_object)
             player_object.guild = "Unaffiliated"
             return f"Player {player_name} has been removed from the guild."
-        else:
+        else:   # elif len(players_objects_list) == 0:
             return f"Player {player_name} is not in the guild."
 
     def guild_info(self) -> str:
