@@ -1,5 +1,5 @@
 from typing import List
-from project.player import Player
+from player import Player
 
 
 class Guild:
@@ -19,7 +19,7 @@ class Guild:
             player.guild = self.name
             return f"Welcome player {player_name} to the guild {guild_name}"
 
-    def kick_player(self, player_name: str):
+    def kick_player(self, player_name: str) -> str:
         players_objects_list = [player_object for player_object in self.players
                                 if player_object.name == player_name]
         if players_objects_list:
@@ -30,7 +30,7 @@ class Guild:
         else:
             return f"Player {player_name} is not in the guild."
 
-    def guild_info(self):
+    def guild_info(self) -> str:
         guild_name = self.name
         players_info = "\n".join([player_object.player_info()
                                   for player_object in self.players])
