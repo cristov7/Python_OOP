@@ -27,17 +27,17 @@ class Time:
         if self.seconds + 1 <= Time.max_seconds:
             self.seconds += 1
             return self.get_time()
-        else:
+        else:   # elif self.seconds + 1 > Time.max_seconds:
             self.seconds = 0
             if self.minutes + 1 <= Time.max_minutes:
                 self.minutes += 1
                 return self.get_time()
-            else:
+            else:  # elif self.minutes + 1 > Time.max_minutes:
                 self.minutes = 0
                 if self.hours + 1 <= Time.max_hours:
                     self.hours += 1
                     return self.get_time()
-                else:
+                else:   # elif self.hours + 1 > Time.max_hours:
                     self.hours = 0
                     return self.get_time()
                     # return "00:00:00"
@@ -62,37 +62,37 @@ class Time:
 #     max_hours: int = 23
 #     max_minutes: int = 59
 #     max_seconds: int = 59
-# 
+#
 #     def __init__(self, hours: int, minutes: int, seconds: int):
 #         self.hours = hours
 #         self.minutes = minutes
 #         self.seconds = seconds
-# 
+#
 #     def set_time(self, hours: int, minutes: int, seconds: int) -> None:
 #         self.hours = hours
 #         self.minutes = minutes
 #         self.seconds = seconds
-# 
+#
 #     def get_time(self) -> str:
 #         hh = self.hours
 #         mm = self.minutes
 #         ss = self.seconds
 #         return f"{hh:02}:{mm:02}:{ss:02}"
-# 
+#
 #     def next_second(self) -> str:
 #         self.seconds += 1
 #         if self.seconds <= Time.max_seconds:
 #             return self.get_time()
-#         else:
+#         else:   # elif self.seconds > Time.max_seconds:
 #             self.seconds = 0
 #             self.minutes += 1
 #             if self.minutes <= Time.max_minutes:
 #                 return self.get_time()
-#             else:
+#             else:   # elif self.minutes > Time.max_minutes:
 #                 self.minutes = 0
 #                 self.hours += 1
 #                 if self.hours <= Time.max_hours:
 #                     return self.get_time()
-#                 else:
+#                 else:   # elif self.hours > Time.max_hours:
 #                     self.hours = 0
 #                     return self.get_time()
