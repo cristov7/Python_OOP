@@ -12,7 +12,7 @@ class Account:
         if amount <= self.balance:
             self.balance -= amount
             return self.balance
-        else:
+        else:   # elif amount > self.balance:
             return "Amount exceeded balance"
 
     def info(self) -> str:
