@@ -5,7 +5,7 @@ from project.pokemon import Pokemon
 class Trainer:
     def __init__(self, name: str):
         self.name = name
-        self.pokemons: List[Pokemon] = []
+        self.pokemons: List[Pokemon] = []   # [pokemon objects]
 
     def add_pokemon(self, pokemon: Pokemon) -> str:
         if pokemon in self.pokemons:
@@ -17,9 +17,9 @@ class Trainer:
             return f"Caught {pokemon_name} with health {pokemon_health}"
 
     def release_pokemon(self, pokemon_name: str) -> str:
-        pokemon_names_list = [pokemon for pokemon in self.pokemons if pokemon.name == pokemon_name]
-        if pokemon_names_list:
-            pokemon = pokemon_names_list[0]
+        pokemon_objects_list = [pokemon for pokemon in self.pokemons if pokemon.name == pokemon_name]
+        if pokemon_objects_list:
+            pokemon = pokemon_objects_list[0]
             self.pokemons.remove(pokemon)
             return f"You have released {pokemon_name}"
         else:
