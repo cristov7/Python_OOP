@@ -18,7 +18,7 @@ class ProductRepository:
 
     def remove(self, product_name: str) -> None:
         product_object = self.find(product_name)
-        if product_object:   # if product is not None:
+        if product_object:   # if product_object is not None:
             self.products.remove(product_object)
 
     def __repr__(self) -> str:
