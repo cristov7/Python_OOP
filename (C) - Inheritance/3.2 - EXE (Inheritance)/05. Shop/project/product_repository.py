@@ -6,7 +6,7 @@ class ProductRepository:
     def __init__(self):
         self.products: List[Product] = []   # [product_objects]
 
-    def add(self, product: Product) -> None:
+    def add(self, product: Product) -> None:   # product == product_object
         self.products.append(product)
 
     def find(self, product_name: str) -> [str, None]:
@@ -17,9 +17,9 @@ class ProductRepository:
             return product_object   # product_object = product_name
 
     def remove(self, product_name: str) -> None:
-        product = self.find(product_name)
-        if product:   # if product is not None:
-            self.products.remove(product)
+        product_object = self.find(product_name)
+        if product_object:   # if product is not None:
+            self.products.remove(product_object)
 
     def __repr__(self) -> str:
         products_info = []
