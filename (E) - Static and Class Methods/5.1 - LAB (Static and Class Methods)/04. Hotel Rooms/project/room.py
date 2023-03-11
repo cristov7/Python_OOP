@@ -17,7 +17,7 @@ class Room:
             number = self.number
             return f"Room number {number} cannot be taken"
 
-    def free_room(self):
+    def free_room(self) -> [None, str]:
         if self.is_taken:
             self.is_taken = False
             self.guests = 0
