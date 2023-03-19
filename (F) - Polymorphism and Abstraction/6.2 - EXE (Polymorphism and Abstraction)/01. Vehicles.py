@@ -32,14 +32,14 @@ class Car(Vehicle):
 
 
 class Truck(Vehicle):
-    AIR_CONDITION: float = 1.6   # consumption liters per 1 km
+    AIR_CONDITIONER: float = 1.6   # consumption liters per 1 km
     REFUEL_PERCENT: int = 95     # refuel percent (95% from 100%)
 
     # def __init__(self, fuel_quantity: int, fuel_consumption: int):
     #     super().__init__(fuel_quantity, fuel_consumption)
 
     def drive(self, distance: int) -> None:   # km
-        fuel_consumption = self.fuel_consumption + Truck.AIR_CONDITION   # consumption liters per 1 km
+        fuel_consumption = self.fuel_consumption + Truck.AIR_CONDITIONER   # consumption liters per 1 km
         total_consumption = fuel_consumption * distance
         if total_consumption <= self.fuel_quantity:
             self.fuel_quantity -= total_consumption
