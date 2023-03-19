@@ -16,13 +16,13 @@ class Vehicle(ABC):
 
 
 class Car(Vehicle):
-    AIR_CONDITION: float = 0.9   # consumption liters per 1 km
+    AIR_CONDITIONER: float = 0.9   # consumption liters per 1 km
 
     # def __init__(self, fuel_quantity: int, fuel_consumption: int):
     #     super().__init__(fuel_quantity, fuel_consumption)
 
     def drive(self, distance: int) -> None:   # km
-        fuel_consumption = self.fuel_consumption + Car.AIR_CONDITION   # consumption liters per 1 km
+        fuel_consumption = self.fuel_consumption + Car.AIR_CONDITIONER   # consumption liters per 1 km
         total_consumption = fuel_consumption * distance
         if total_consumption <= self.fuel_quantity:
             self.fuel_quantity -= total_consumption
