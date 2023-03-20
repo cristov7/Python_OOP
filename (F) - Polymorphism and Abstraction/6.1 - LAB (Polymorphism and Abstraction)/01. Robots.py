@@ -22,7 +22,7 @@ class WarRobot(Robot):
 
 
 def number_of_robot_sensors(robot):
-    print(robot.sensors_amount)
+    print(robot.robot_sensors_amount())
 
 
 basic_robot = Robot('Robo')
