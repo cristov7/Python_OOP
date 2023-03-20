@@ -1,24 +1,24 @@
 class Robot:
-    sensors_amount = 1
+    _sensors_amount = 1
 
     def __init__(self, name):
         self.name = name
 
     @classmethod
     def robot_sensors_amount(cls):
-        return cls.sensors_amount
+        return cls._sensors_amount
 
 
 class MedicalRobot(Robot):
-    sensors_amount = 6
+    _sensors_amount = 6
 
 
 class ChefRobot(Robot):
-    sensors_amount = 4
+    _sensors_amount = 4
 
 
 class WarRobot(Robot):
-    sensors_amount = 12
+    _sensors_amount = 12
 
 
 def number_of_robot_sensors(robot):
