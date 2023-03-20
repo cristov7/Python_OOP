@@ -7,20 +7,20 @@ class ImageArea:
         area = self.width * self.height
         return area
 
-    def __gt__(self, other):
+    def __gt__(self, other) -> bool:   # >
         return self.get_area() > other.get_area()
 
-    def __ge__(self, other):
+    def __ge__(self, other) -> bool:   # >=
         return self.get_area() >= other.get_area()
 
-    def __lt__(self, other):
-        return self.get_area() < other.get_area()
+    # def __lt__(self, other) -> bool:
+    #     return self.get_area() < other.get_area()
 
-    def __le__(self, other):
-        return self.get_area() <= other.get_area()
+    # def __le__(self, other) -> bool:
+    #     return self.get_area() <= other.get_area()
 
-    def __eq__(self, other):
+    def __eq__(self, other) -> bool:   # ==
         return self.get_area() == other.get_area()
 
-    def __ne__(self, other):
-        return self.get_area() != other.get_area()
+    # def __ne__(self, other) -> bool:
+    #     return self.get_area() != other.get_area()
