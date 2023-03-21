@@ -8,5 +8,5 @@ class Tomcat(Cat):
         super().__init__(name, age, Tomcat.GENDER)
 
     @staticmethod
-    def make_sound():
+    def make_sound() -> str:
         return "Hiss"

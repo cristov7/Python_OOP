@@ -8,5 +8,5 @@ class Kitten(Cat):
         super().__init__(name, age, Kitten.GENDER)
 
     @staticmethod
-    def make_sound():
+    def make_sound() -> str:
         return "Meow"
