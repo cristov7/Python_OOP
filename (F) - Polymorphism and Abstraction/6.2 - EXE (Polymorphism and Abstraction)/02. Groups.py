@@ -31,7 +31,8 @@ class Group:
         second_name = other.name
         name = f"{first_name} {second_name}"
         people = self.people + other.people
-        return Group(name, people)
+        new_instance = Group(name, people)
+        return new_instance
 
     def __repr__(self) -> str:
         name = self.name
