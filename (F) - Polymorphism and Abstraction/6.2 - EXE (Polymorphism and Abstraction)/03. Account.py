@@ -8,11 +8,12 @@ class Account:
         self._transactions: List[int] = []
 
     @property   # getter
-    def balance(self):
+    def balance(self) -> int:
         return self.amount + sum(self._transactions)
 
     def handle_transaction(self, transaction_amount: int) -> [Exception, str]:
-        if self.balance + transaction_amount < 0:
+        balance = self.balance
+        if balance + transaction_amount < 0:
             raise ValueError("sorry cannot go in debt!")
         else:
             self._transactions.append(transaction_amount)
@@ -23,48 +24,56 @@ class Account:
         if not isinstance(amount, int):
             raise ValueError("please use int for amount")
         else:
-            return self.handle_transaction(amount)
+            add_transaction = self.handle_transaction(amount)
+            return add_transaction
 
-    def __str__(self) -> str:   # print
+    def __str__(self) -> str:   # print an instance
         owner = self.owner
         amount = self.amount
         return f"Account of {owner} with starting amount: {amount}"
 
-    def __repr__(self) -> str:   # representational string
+    def __repr__(self) -> str:   # print a representational string of an instance
         owner = self.owner
         amount = self.amount
         return f"Account({owner}, {amount})"
 
     def __len__(self) -> int:
-        return len(self._transactions)
+        total_number_of_transactions = len(self._transactions)   # self._transactions.__len__()
+        return total_number_of_transactions
 
-    def __getitem__(self, index) -> int:   # iterate over and receive each transaction
-        return self._transactions[index]
+    def __getitem__(self, item) -> int:
+        index = item
+        transaction = self._transactions[index]   # self._transactions.__getitem__(item)
+        return transaction
 
-    def __reversed__(self):   # reverse the order of transactions
-        return reversed(self._transactions)
+    def __reversed__(self) -> reversed:
+        reversed_order_of_transactions = reversed(self._transactions)   # self._transactions.__reversed__()
+        return reversed_order_of_transactions
 
     def __gt__(self, other) -> bool:   # >
         return self.balance > other.balance
 
-    def __ge__(self, other) -> bool:   # >=
-        return self.balance >= other.balance
-
-    def __eq__(self, other) -> bool:   # ==
-        return self.balance == other.balance
-
     # def __lt__(self, other) -> bool:
     #     return self.balance < other.balance
 
+    def __ge__(self, other) -> bool:   # >=
+        return self.balance >= other.balance
+
     # def __le__(self, other) -> bool:
     #     return self.balance <= other.balance
+
+    def __eq__(self, other) -> bool:   # ==
+        return self.balance == other.balance
 
     # def __ne__(self, other) -> bool:
     #     return self.balance != other.balance
 
     def __add__(self, other) -> object:
-        owner = f"{self.owner}&{other.owner}"
+        first_owner = self.owner
+        second_owner = other.owner
+        owner = f"{first_owner}&{second_owner}"
         amount = self.amount + other.amount
         new_account = Account(owner, amount)
-        new_account._transactions = self._transactions + other._transactions
+        new_account_transactions = self._transactions + other._transactions
+        new_account._transactions = new_account_transactions
         return new_account
