@@ -23,8 +23,8 @@ class Group:
         self.people = people
 
     def __len__(self) -> int:
-        length = len(self.people)
-        return length
+        length_of_a_group = len(self.people)
+        return length_of_a_group
 
     def __add__(self, other) -> object:
         first_name = self.name
