@@ -23,7 +23,7 @@ class Group:
         self.people = people
 
     def __len__(self) -> int:
-        length_of_a_group = len(self.people)
+        length_of_a_group = len(self.people)   # self.people.__len__()
         return length_of_a_group
 
     def __add__(self, other) -> object:
@@ -41,5 +41,5 @@ class Group:
 
     def __getitem__(self, item) -> str:
         index = item
-        person = self.people[index].__repr__()
+        person = self.people[index].__repr__()   # self.people.__getitem__(item).__repr__()
         return f"Person {index}: {person}"
