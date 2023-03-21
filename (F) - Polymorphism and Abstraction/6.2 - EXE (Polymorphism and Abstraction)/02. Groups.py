@@ -7,13 +7,14 @@ class Person:
         self.surname = surname
 
     def __repr__(self) -> str:
-        return f"{self.name} {self.surname}"
+        name = self.name
+        surname = self.surname
+        return f"{name} {surname}"
 
     def __add__(self, other) -> object:
         name = self.name
         surname = other.surname
-        new_person = Person(name, surname)
-        return new_person
+        return Person(name, surname)
 
 
 class Group:
@@ -22,22 +23,23 @@ class Group:
         self.people = people
 
     def __len__(self) -> int:
-        return len(self.people)
+        length = len(self.people)
+        return length
 
     def __add__(self, other) -> object:
         first_name = self.name
         second_name = other.name
         name = f"{first_name} {second_name}"
         people = self.people + other.people
-        new_group = Group(name, people)
-        return new_group
+        return Group(name, people)
 
     def __repr__(self) -> str:
         name = self.name
-        members = ", ".join([person.__repr__()
-                             for person in self.people])
+        members = ", ".join(person.__repr__()
+                            for person in self.people)
         return f"Group {name} with members {members}"
 
-    def __getitem__(self, index) -> str:
-        person = self.people[index]
+    def __getitem__(self, item) -> str:
+        index = item
+        person = self.people[index].__repr__()
         return f"Person {index}: {person}"
