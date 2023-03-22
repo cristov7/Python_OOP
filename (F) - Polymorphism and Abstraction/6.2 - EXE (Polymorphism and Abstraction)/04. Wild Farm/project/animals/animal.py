@@ -37,6 +37,21 @@ class Bird(Animal, ABC):
         super().__init__(name, weight)
         self.wing_size = wing_size
 
+    @property
+    @abstractmethod
+    def food_that_eats(self):
+        pass
+
+    @property
+    @abstractmethod
+    def gained_weight(self):
+        pass
+
+    @staticmethod
+    @abstractmethod
+    def make_sound():
+        pass
+
     def __repr__(self) -> str:
         animal_type = self.__class__.__name__
         animal_name = self.name
@@ -50,6 +65,21 @@ class Mammal(Animal, ABC):
     def __init__(self, name: str, weight: float, living_region: str):
         super().__init__(name, weight)
         self.living_region = living_region
+
+    @property
+    @abstractmethod
+    def food_that_eats(self):
+        pass
+
+    @property
+    @abstractmethod
+    def gained_weight(self):
+        pass
+
+    @staticmethod
+    @abstractmethod
+    def make_sound():
+        pass
 
     def __repr__(self) -> str:
         animal_type = self.__class__.__name__
