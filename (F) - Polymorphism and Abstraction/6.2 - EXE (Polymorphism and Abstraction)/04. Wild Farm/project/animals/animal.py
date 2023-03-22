@@ -1,4 +1,6 @@
 from abc import ABC, abstractmethod
+from typing import List
+from project.food import Food
 
 
 class Animal(ABC):
@@ -7,29 +9,29 @@ class Animal(ABC):
         self.weight = weight
         self.food_eaten: int = 0
 
-    @property
-    @abstractmethod
-    def food_that_eats(self):
-        pass
-    
-    @property
-    @abstractmethod
-    def gained_weight(self):
-        pass
-
     @staticmethod
     @abstractmethod
-    def make_sound():
+    def make_sound() -> str:
         pass
 
-    def feed(self, food):
-        if type(food) not in self.food_that_eats:
+    @property   # getter
+    @abstractmethod
+    def specific_type_of_food(self) -> List[object]:
+        pass
+    
+    @property   # getter
+    @abstractmethod
+    def increase_weight(self) -> float:
+        pass
+
+    def feed(self, food: Food) -> [None, str]:   # food == food_object
+        if type(food) in self.specific_type_of_food:
+            self.weight += food.quantity * self.increase_weight
+            self.food_eaten += food.quantity
+        else:
             animal_type = self.__class__.__name__
             food_type = food.__class__.__name__
             return f"{animal_type} does not eat {food_type}!"
-        else:
-            self.weight += food.quantity * self.gained_weight
-            self.food_eaten += food.quantity
 
 
 class Bird(Animal, ABC):
@@ -37,20 +39,20 @@ class Bird(Animal, ABC):
         super().__init__(name, weight)
         self.wing_size = wing_size
 
-    @property
-    @abstractmethod
-    def food_that_eats(self):
-        pass
+    # @staticmethod
+    # @abstractmethod
+    # def make_sound() -> str:
+    #     pass
 
-    @property
-    @abstractmethod
-    def gained_weight(self):
-        pass
+    # @property   # getter
+    # @abstractmethod
+    # def specific_type_of_food(self) -> List[object]:
+    #     pass
 
-    @staticmethod
-    @abstractmethod
-    def make_sound():
-        pass
+    # @property   # getter
+    # @abstractmethod
+    # def increase_weight(self) -> float:
+    #     pass
 
     def __repr__(self) -> str:
         animal_type = self.__class__.__name__
@@ -66,20 +68,20 @@ class Mammal(Animal, ABC):
         super().__init__(name, weight)
         self.living_region = living_region
 
-    @property
-    @abstractmethod
-    def food_that_eats(self):
-        pass
+    # @staticmethod
+    # @abstractmethod
+    # def make_sound() -> str:
+    #     pass
 
-    @property
-    @abstractmethod
-    def gained_weight(self):
-        pass
+    # @property   # getter
+    # @abstractmethod
+    # def specific_type_of_food(self) -> List[object]:
+    #     pass
 
-    @staticmethod
-    @abstractmethod
-    def make_sound():
-        pass
+    # @property   # getter
+    # @abstractmethod
+    # def increase_weight(self) -> float:
+    #     pass
 
     def __repr__(self) -> str:
         animal_type = self.__class__.__name__
