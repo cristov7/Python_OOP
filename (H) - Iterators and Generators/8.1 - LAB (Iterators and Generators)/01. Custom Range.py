@@ -2,14 +2,15 @@ class custom_range:
     def __init__(self, start: int, end: int):
         self.start = start
         self.end = end
+        self.__number: int = self.start - 1
 
     def __iter__(self):
         return self
 
     def __next__(self):
-        if self.start <= self.end:
-            current_number = self.start
-            self.start += 1
+        self.__number += 1
+        if self.__number <= self.end:
+            current_number = self.__number
             return current_number
         else:
             raise StopIteration
@@ -26,7 +27,7 @@ class custom_range:
 #         self.end = end
 #
 #     def __iter__(self):
-#         return (x for x in range(self.start, self.end + 1))
+#         return (number for number in range(self.start, self.end + 1))
 #
 #
 # one_to_ten = custom_range(1, 10)

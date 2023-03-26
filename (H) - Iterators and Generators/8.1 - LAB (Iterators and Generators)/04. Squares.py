@@ -27,19 +27,18 @@ def squares(number):
 # class squares:
 #     def __init__(self, number: int):
 #         self.number = number
-#         self.counter: int = 0
+#         self.__counter: int = 0
 #
 #     def __iter__(self):
 #         return self
 #
 #     def __next__(self):
-#         while True:
-#             if self.counter == self.number:
-#                 raise StopIteration
-#             else:
-#                 self.counter += 1
-#                 square_number = self.counter ** 2
-#                 return square_number
+#         self.__counter += 1
+#         if self.__counter > self.number:
+#             raise StopIteration
+#         else:
+#             square_number = self.__counter ** 2
+#             return square_number
 #
 #
 # print(list(squares(5)))

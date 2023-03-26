@@ -29,18 +29,18 @@ def genrange(start, end):
 #     def __init__(self, start: int, end: int):
 #         self.start = start
 #         self.end = end
+#         self.__number: int = self.start - 1
 #
 #     def __iter__(self):
 #         return self
 #
 #     def __next__(self):
-#         while True:
-#             if self.start <= self.end:
-#                 number = self.start
-#                 self.start += 1
-#                 return number
-#             else:
-#                 raise StopIteration
+#         self.__number += 1
+#         if self.__number <= self.end:
+#             number = self.__number
+#             return number
+#         else:
+#             raise StopIteration
 #
 #
 # print(list(genrange(1, 10)))

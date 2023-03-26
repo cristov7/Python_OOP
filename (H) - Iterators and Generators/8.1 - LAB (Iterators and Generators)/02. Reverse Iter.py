@@ -1,15 +1,15 @@
 class reverse_iter:
     def __init__(self, iterable):
         self.iterable = iterable
-        self.index: int = len(self.iterable)
+        self.__index: int = len(self.iterable)   # self.iterable.__len__()
 
     def __iter__(self):
         return self
 
     def __next__(self):
-        if 0 < self.index:
-            self.index -= 1
-            element = self.iterable[self.index]
+        if 0 < self.__index:
+            self.__index -= 1
+            element = self.iterable[self.__index]
             return element
         else:
             raise StopIteration
@@ -34,8 +34,7 @@ class reverse_iter:
 
 
 # def reverse_iter(numbers_list):
-#     while numbers_list:
-#         number = numbers_list.pop()
+#     for number in reversed(numbers_list):
 #         yield number
 #
 #
