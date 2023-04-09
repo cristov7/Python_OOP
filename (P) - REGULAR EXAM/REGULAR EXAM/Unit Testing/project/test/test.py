@@ -51,7 +51,7 @@ class TennisPlayerTests(unittest.TestCase):
         assert self.tennis_player.wins == ["Tournament 1"]
         assert isinstance(self.tennis_player.wins, list)
 
-    def test_add_new_win_and_tournament_name_has_been_already_added_to_the_list__of_wins_successfully(self):
+    def test_add_new_win_and_tournament_name_has_been_already_added_to_the_list_of_wins_successfully(self):
         assert self.tennis_player.wins == []
         self.tennis_player.add_new_win("Tournament 1")
         assert self.tennis_player.wins == ["Tournament 1"]
@@ -59,13 +59,13 @@ class TennisPlayerTests(unittest.TestCase):
         assert self.tennis_player.wins == ["Tournament 1"]
         assert isinstance(self.tennis_player.add_new_win("Tournament 1"), str)
 
-    def test___lt___return_self_points_lt_other_points_successfully(self):
+    def test___lt___return_self_points___lt___other_points_successfully(self):
         assert self.tennis_player.points == 10.0
         assert self.tennis_player_2.points == 50.0
         self.assertEqual(self.tennis_player < self.tennis_player_2, "Bobby is a top seeded player and he/she is better than Alex")
         assert self.tennis_player < self.tennis_player_2
 
-    def test___lt___return_self_points_ge_other_points_successfully(self):
+    def test___lt___return_self_points___ge___other_points_successfully(self):
         assert self.tennis_player.points == 10.0
         self.tennis_player.points = 50.0
         assert self.tennis_player.points == 50.0
