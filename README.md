@@ -29,7 +29,12 @@ Online judge system - https://judge.softuni.org/
 - Retake Exam
 
 
-# Additional resources
+# Additional resources:
 - Python OOP
 
 https://softuni.bg/trainings/3964/python-oop-february-2023
+
+
+# Certificate of Object-Oriented Programming with Python:
+
+![Python OOP](https://user-images.githubusercontent.com/114032977/231402642-3a30f30b-76ae-435f-bbdc-3952958c97f9.png)
